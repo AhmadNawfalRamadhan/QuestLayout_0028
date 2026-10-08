@@ -18,6 +18,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
@@ -47,7 +48,7 @@ fun ActivitasPertama(modifier: Modifier) {
                 .fillMaxWidth(1f)
                 .padding(12.dp),
             colors = CardDefaults.cardColors(
-                contentColor = Color.DarkGray
+                containerColor = colorResource(R.color.card_0_bg)
             )
         ) {
             Row() {
@@ -74,18 +75,17 @@ fun ActivitasPertama(modifier: Modifier) {
                     )
                 }
             }
-
-            Box(
+        }
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+        ) {
+            Text(
+                stringResource(R.string.copy),
                 modifier = Modifier
-                    .fillMaxSize()
-            ) {
-                Text(
-                    stringResource(R.string.copy),
-                    modifier = Modifier
-                        .align(Alignment.BottomCenter)
-                        .padding(bottom = 50.dp)
-                )
-            }
+                    .align(Alignment.BottomCenter)
+                    .padding(bottom = 50.dp)
+            )
         }
     }
 }
